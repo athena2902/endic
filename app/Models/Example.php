@@ -43,4 +43,24 @@ class Example extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Relationship: one Example belong to Entry
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function entry()
+    {
+        return $this->belongsTo(Entry::class, 'entry_id');
+    }
+
+    /**
+     * Relationship: one Example belong to Sense
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function sense()
+    {
+        return $this->belongsTo(Sense::class, 'sense_id');
+    }
 }

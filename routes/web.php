@@ -15,7 +15,7 @@ Route::get('/', function () {
     phpinfo();
     //return view('welcome');
 });
-Route::get('rename-entries', 'WordController@index');
+Route::get('word', 'WordController@index');
 
 Auth::routes();
 

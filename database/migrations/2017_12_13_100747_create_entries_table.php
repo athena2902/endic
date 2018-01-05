@@ -17,7 +17,6 @@ class CreateEntriesTable extends Migration
             $table->increments('id');
             $table->integer('word_id');
             $table->unsignedTinyInteger('type')->comment('1: nouns, 2: verb, 3: adjective ...etc.');
-            $table->boolean('has_sense');
             $table->string('voice_uk_1')->nullable();
             $table->string('voice_us_1')->nullable();
             $table->string('voice_uk_2')->nullable();

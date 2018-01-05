@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\Entries;
+use App\Repositories\Words;
+use Sunra\PhpSimple\HtmlDomParser;
+use Illuminate\Support\Facades\Log;
 
 class WordController extends Controller
 {
@@ -12,9 +14,9 @@ class WordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Entries $entries)
+    public function index(Words $words)
     {
-        $entries->rename();
+        
     }
 
     /**

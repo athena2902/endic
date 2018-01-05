@@ -44,4 +44,14 @@ class Word extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Relationship: one Word has many Entry
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function entries()
+    {
+        return $this->hasMany(Entry::class, 'word_id');
+    }
 }

@@ -43,4 +43,34 @@ class Sense extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Relationship: one Sense belong to Entry
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function entry()
+    {
+        return $this->belongsTo(Entry::class, 'entry_id');
+    }
+
+    /**
+     * Relationship: one Sense has many Definition
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function definitions()
+    {
+        return $this->hasMany(Definition::class, 'sense_id');
+    }
+
+    /**
+     * Relationship: one Sense has many Example
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function examples()
+    {
+        return $this->hasMany(Example::class, 'sense_id');
+    }
 }
