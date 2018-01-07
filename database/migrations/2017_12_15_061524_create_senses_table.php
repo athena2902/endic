@@ -16,7 +16,7 @@ class CreateSensesTable extends Migration
         Schema::create('senses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('entry_id');
-            $table->string('name');
+            $table->string('name')->default('');
             $table->timestamps();
             $table->softDeletes();
         });

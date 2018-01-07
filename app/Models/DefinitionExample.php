@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Example extends Model
+class DefinitionExample extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +14,7 @@ class Example extends Model
      *
      * @var string
      */
-    protected $table = 'examples';
+    protected $table = 'definition_examples';
 
     /**
      * The primary key for the model.
@@ -35,7 +35,7 @@ class Example extends Model
      *
      * @var array
      */
-    protected $fillable = ['sense_id', 'sentence'];
+    protected $fillable = ['definition_id', 'title', 'sentence'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -45,12 +45,12 @@ class Example extends Model
     protected $dates = ['deleted_at'];
 
     /**
-     * Relationship: one Example belong to Sense
+     * Relationship: one DefinitionExample belong to Definition
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function sense()
+    public function definition()
     {
-        return $this->belongsTo(Sense::class, 'sense_id');
+        return $this->belongsTo(Definition::class, 'definition_id');
     }
 }

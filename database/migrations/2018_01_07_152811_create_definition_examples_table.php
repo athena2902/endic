@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExamplesTable extends Migration
+class CreateDefinitionExamplesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateExamplesTable extends Migration
      */
     public function up()
     {
-        Schema::create('examples', function (Blueprint $table) {
+        Schema::create('definition_examples', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sense_id');
+            $table->integer('definition_id');
             $table->string('sentence');
             $table->timestamps();
             $table->softDeletes();
@@ -29,6 +29,6 @@ class CreateExamplesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('examples');
+        Schema::dropIfExists('definition_examples');
     }
 }

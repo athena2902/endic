@@ -35,7 +35,7 @@ class Definition extends Model
      *
      * @var array
      */
-    protected $fillable = ['entry_id', 'sense_id', 'title', 'definition'];
+    protected $fillable = ['sense_id', 'title', 'definition'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -45,16 +45,6 @@ class Definition extends Model
     protected $dates = ['deleted_at'];
 
     /**
-     * Relationship: one Definition belong to Entry
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function entry()
-    {
-        return $this->belongsTo(Entry::class, 'entry_id');
-    }
-
-    /**
      * Relationship: one Definition belong to Sense
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -62,5 +52,15 @@ class Definition extends Model
     public function sense()
     {
         return $this->belongsTo(Sense::class, 'sense_id');
+    }
+
+    /**
+     * Relationship: one Definition has many DefinitionExample
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function examples()
+    {
+        return $this->hasMany(DefinitionExample::class, 'definition_id');
     }
 }

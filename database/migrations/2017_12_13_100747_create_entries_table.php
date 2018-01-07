@@ -16,17 +16,17 @@ class CreateEntriesTable extends Migration
         Schema::create('entries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('word_id');
-            $table->unsignedTinyInteger('type')->comment('1: nouns, 2: verb, 3: adjective ...etc.');
-            $table->string('voice_uk_1')->nullable();
-            $table->string('voice_us_1')->nullable();
-            $table->string('voice_uk_2')->nullable();
-            $table->string('voice_us_2')->nullable();
-            $table->string('ipa_uk_1')->nullable();
-            $table->string('ipa_us_1')->nullable();
-            $table->string('ipa_uk_2')->nullable();
-            $table->string('ipa_us_2')->nullable();
-            $table->string('image')->nullable();
-            $table->string('wikipedia')->nullable();
+            $table->unsignedTinyInteger('type')->default(0);
+            $table->string('voice_uk_1')->default('');
+            $table->string('voice_us_1')->default('');
+            $table->string('voice_uk_2')->default('');
+            $table->string('voice_us_2')->default('');
+            $table->string('ipa_uk_1')->default('');
+            $table->string('ipa_us_1')->default('');
+            $table->string('ipa_uk_2')->default('');
+            $table->string('ipa_us_2')->default('');
+            $table->string('image')->default('');
+            $table->string('wikipedia')->default('');
             $table->timestamps();
             $table->softDeletes();
         });

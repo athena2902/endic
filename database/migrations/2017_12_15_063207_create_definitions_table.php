@@ -15,10 +15,9 @@ class CreateDefinitionsTable extends Migration
     {
         Schema::create('definitions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('entry_id');
-            $table->integer('sense_id')->nullable();
-            $table->string('title')->nullable();
-            $table->string('definition');
+            $table->integer('sense_id');
+            $table->string('title')->default('');;
+            $table->string('definition')->default('');;
             $table->timestamps();
             $table->softDeletes();
         });

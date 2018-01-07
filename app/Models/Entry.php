@@ -68,26 +68,6 @@ class Entry extends Model
     }
 
     /**
-     * Relationship: one Entry has many Definition
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function definitions()
-    {
-        return $this->hasMany(Definition::class, 'entry_id');
-    }
-
-    /**
-     * Relationship: one Entry has many Example
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function examples()
-    {
-        return $this->hasMany(Example::class, 'entry_id');
-    }
-
-    /**
      * Relationship: one Entry belong to WordClass
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
