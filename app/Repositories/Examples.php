@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Models\Entry;
+use App\Models\Example;
 
-class Entries
+class Examples
 {
     /**
      * Get all records
@@ -13,7 +13,7 @@ class Entries
      */
     public function getAll()
     {
-        return Entry::query()->get();
+        return Example::query()->get();
     }
 
     /**
@@ -24,7 +24,7 @@ class Entries
      */
     public function getById($id)
     {
-        return Entry::query()->where('id', $id)->first();
+        return Example::query()->where('id', $id)->first();
     }
 
     /**
@@ -35,7 +35,7 @@ class Entries
      */
     public function create(array $input)
     {
-        return Entry::query()->create($input);
+        return Example::query()->create($input);
     }
 
     /**
@@ -47,7 +47,7 @@ class Entries
      */
     public function update($id, array $input)
     {
-        return Entry::query()->find($id)->update($input);
+        return Example::query()->find($id)->update($input);
     }
 
     /**
@@ -58,6 +58,6 @@ class Entries
      */
     public function delete($id)
     {
-        Entry::query()->destroy($id);
+        Example::query()->destroy($id);
     }
 }

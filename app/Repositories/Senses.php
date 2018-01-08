@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Models\Entry;
+use App\Models\Sense;
 
-class Entries
+class Senses
 {
     /**
      * Get all records
@@ -13,7 +13,7 @@ class Entries
      */
     public function getAll()
     {
-        return Entry::query()->get();
+        return Sense::query()->get();
     }
 
     /**
@@ -24,7 +24,7 @@ class Entries
      */
     public function getById($id)
     {
-        return Entry::query()->where('id', $id)->first();
+        return Sense::query()->where('id', $id)->first();
     }
 
     /**
@@ -35,7 +35,7 @@ class Entries
      */
     public function create(array $input)
     {
-        return Entry::query()->create($input);
+        return Sense::query()->create($input);
     }
 
     /**
@@ -47,7 +47,7 @@ class Entries
      */
     public function update($id, array $input)
     {
-        return Entry::query()->find($id)->update($input);
+        return Sense::query()->find($id)->update($input);
     }
 
     /**
@@ -58,6 +58,6 @@ class Entries
      */
     public function delete($id)
     {
-        Entry::query()->destroy($id);
+        Sense::query()->destroy($id);
     }
 }
